@@ -1,0 +1,18 @@
+import { Route, Routes } from "react-router-dom"
+import Home from "../pages/Home"
+import Success from "../pages/Success"
+import ErrorPage from "../pages/ErrorPage"
+import ProtectedRoute from "./ProtectedRoute"
+
+
+const PageRoutes = () => {
+  return (
+    <Routes>
+       <Route path="/" element={<Home/>} /> 
+       <Route path="/success" element={<Success/>}/>
+       <Route path="*" element={<ProtectedRoute element={<ErrorPage/>}/>}/>
+    </Routes>
+  )
+}
+
+export default PageRoutes
